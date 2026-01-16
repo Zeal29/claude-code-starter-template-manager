@@ -9,7 +9,8 @@
 ## Active Epics
 | ID | Name | Status | Progress | Active Task | External ID |
 |----|------|--------|----------|-------------|-------------|
-| E001 | integrate-context-checkpoint | ⚪ ready | 0% | None | — |
+| E001 | integrate-context-checkpoint | 🟡 in-progress | 25% | T002 | — |
+| E002 | context-handover-and-cleanup | 📝 draft | 0% | None | — |
 
 ## Active Standalone Tasks
 | ID | Name | Status | External ID |
@@ -19,14 +20,14 @@
 ---
 
 ## Quick Resume
-**Last worked on**: E001 - integrate-context-checkpoint
-**Command**: `/work:resume E001` to continue
+**Last worked on**: E001-T001 - infrastructure-hook-setup (implementation complete)
+**Command**: `/work:resume E001-T002` to continue with next task
 
 ---
 
 ## ID Counters
 ```yaml
-next_epic: E002
+next_epic: E003
 next_standalone_task: T001
 ```
 
@@ -84,4 +85,4 @@ This file is Layer 1 - Overview of all template development work
 
 ---
 
-**Last Updated:** 2026-01-16
+**Last Updated:** 2026-01-17
