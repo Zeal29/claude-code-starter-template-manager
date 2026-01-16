@@ -18,7 +18,7 @@ This folder manages the **evolution** of the `claude-code-starter` template. We 
 ## Project Structure
 
 ```
-d:\Work\Templates\Calude/
+d:\Work\Templates\claude-code-starter-template-manager/
 ├── CLAUDE.md                    # <- This file (meta-project memory)
 ├── docs/                        # <- Work management (epics, tasks)
 ├── .claude/                     # <- Commands, agents, rules (copied from template)
