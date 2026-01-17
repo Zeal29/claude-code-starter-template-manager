@@ -2,16 +2,16 @@
 
 ## Overview
 **Total**: 4 subtasks
-**Completed**: 0 (0%)
+**Completed**: 4 (100%)
 **Task**: T001 - Fix Task and Subtask Behaviour
 
 ## Subtasks
 | ID | Name | Status | Priority | Folder |
 |----|------|--------|----------|--------|
-| S1 | Template Refactoring | pending | P0 | T001-S01-template-refactoring/ |
-| S2 | Command Updates | pending | P0 | T001-S02-command-updates/ |
-| S3 | Documentation | pending | P1 | T001-S03-documentation/ |
-| S4 | Validation & Dogfooding | pending | P1 | T001-S04-validation-dogfooding/ |
+| S1 | Template Refactoring | done | P0 | T001-S01-template-refactoring/ |
+| S2 | Command Updates | done | P0 | T001-S02-command-updates/ |
+| S3 | Documentation | done | P1 | T001-S03-documentation/ |
+| S4 | Validation & Dogfooding | done | P1 | T001-S04-validation-dogfooding/ |
 
 ## Subtask Details
 

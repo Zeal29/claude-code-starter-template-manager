@@ -5,7 +5,7 @@
 id: T001
 name: fix-task-and-subtask-behaviour
 epic: ""  # Standalone task
-status: review  # draft|ready|in-progress|blocked|review|done|archived
+status: done  # draft|ready|in-progress|blocked|review|done|archived
 created: 2026-01-17
 updated: 2026-01-18
 last_session: 2026-01-17-processing
@@ -80,10 +80,10 @@ Implement handoff-style knowledge preservation across Epic/Task/Subtask hierarch
 ## Subtasks
 | ID | Name | Status | Priority |
 |----|------|--------|----------|
-| S1 | Template Refactoring | pending | P0 |
-| S2 | Command Updates | pending | P0 |
-| S3 | Documentation | pending | P1 |
-| S4 | Validation & Dogfooding | pending | P1 |
+| S1 | Template Refactoring | done | P0 |
+| S2 | Command Updates | done | P0 |
+| S3 | Documentation | done | P1 |
+| S4 | Validation & Dogfooding | done | P1 |
 
 → Details: [Subtasks/_subtasks-index.md](Subtasks/_subtasks-index.md)
 
@@ -199,6 +199,16 @@ pr_number: ""
 - **Next Step**: Update CLAUDE.md with "Template Development Workflow" section
 - **Blocker**: None
 - **Lesson Learned**: Always work in claude-code-starter FIRST, then copy to template-manager
+
+### Session 2026-01-18 (Closure)
+- All implementation complete (S1-S4)
+- Validation command tested successfully (detected E001-T003 mismatch)
+- Workflow correction applied (template-first development)
+- All subtasks marked done in _subtasks-index.md (4/4 = 100%)
+- Status changed: review → done
+- **Current State**: Task complete, ready for use
+- **Next Step**: Apply new templates during normal work (dogfooding)
+- **Blocker**: None
 
 ## Assumptions
 - WHAT/WHY/HOW template from generate-handoff.md is appropriate for context files

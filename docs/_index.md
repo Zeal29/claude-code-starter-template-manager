@@ -15,13 +15,13 @@
 ## Active Standalone Tasks
 | ID | Name | Status | External ID |
 |----|------|--------|-------------|
-| T001 | fix-task-and-subtask-behaviour | 🔵 review | — |
+| T001 | fix-task-and-subtask-behaviour | 🟢 done | — |
 
 ---
 
 ## Quick Resume
-**Last worked on**: T001 - fix-task-and-subtask-behaviour
-**Command**: `/work:resume T001`
+**Last worked on**: E001-T003 - integration-with-work-commands
+**Command**: `/work:resume E001` or `/work:resume T003`
 
 ---
 
@@ -92,13 +92,14 @@ This file is Layer 1 - Overview of all template development work
 ## Recent Changes
 
 ### 2026-01-18
-- **T001 Implementation Complete**: Fix Task and Subtask Behaviour (status: review)
+- **T001 Complete**: Fix Task and Subtask Behaviour (status: done ✅)
   - All 3 templates updated with WHAT/WHY/HOW structure + Progressive Disclosure Guide
   - Commands updated: subtask-add (single source of truth), draft-process (WHY extraction)
   - New `/work:validate` command to detect state machine issues
   - Comprehensive documentation: work-system.md (~250 lines), progressive-disclosure-examples.md (~300 lines)
   - Validated on E001-T003: correctly detects 9 vs 3 subtask mismatch
-  - 8/9 Definition of Done items complete, ready for testing/dogfooding
+  - Workflow correction applied: template-first development
+  - All 4 subtasks complete (100%), ready for production use
 
 ### 2026-01-17
 - **Cleanup**: Removed duplicate E002-context-handover-and-cleanup epic (empty template)
