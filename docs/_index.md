@@ -9,7 +9,7 @@
 ## Active Epics
 | ID | Name | Status | Progress | Active Task | External ID |
 |----|------|--------|----------|-------------|-------------|
-| E001 | integrate-context-checkpoint | 🟡 in-progress | 25% | T002 | — |
+| E001 | integrate-context-checkpoint | 🟡 in-progress | 30% | T002 | — |
 | E002 | context-handover-and-cleanup | 📝 draft | 0% | None | — |
 
 ## Active Standalone Tasks
@@ -20,8 +20,8 @@
 ---
 
 ## Quick Resume
-**Last worked on**: E001-T001 - infrastructure-hook-setup (implementation complete)
-**Command**: `/work:resume E001-T002` to continue with next task
+**Last worked on**: E001-T002 - check-context-command (100% complete, in review)
+**Command**: `/work:resume E001-T002` to review and approve
 
 ---
 
