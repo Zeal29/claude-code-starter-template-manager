@@ -9,8 +9,8 @@
 ## Active Epics
 | ID | Name | Status | Progress | Active Task | External ID |
 |----|------|--------|----------|-------------|-------------|
-| E001 | integrate-context-checkpoint | 🟡 in-progress | 30% | T002 | — |
-| E002 | context-handover-and-cleanup | 📝 draft | 0% | None | — |
+| E001 | integrate-context-checkpoint | 🟡 in-progress | 29% | T003 | — |
+| E002 | meta-learning-system | 🔴 blocked | 0% | None (blocked by E001) | — |
 
 ## Active Standalone Tasks
 | ID | Name | Status | External ID |
@@ -20,8 +20,8 @@
 ---
 
 ## Quick Resume
-**Last worked on**: E001-T007 - document-meta-learnings (task created)
-**Command**: `/work:resume E001-T007` or `/work:resume E001-T002` (in review)
+**Last worked on**: E002 - meta-learning-system (epic created, blocked by E001)
+**Command**: `/work:resume E001` (continue with T003)
 
 ---
 
@@ -86,3 +86,20 @@ This file is Layer 1 - Overview of all template development work
 ---
 
 **Last Updated:** 2026-01-17
+
+---
+
+## Recent Changes
+
+### 2026-01-17
+- **E002 Created**: Meta-Learning & Knowledge Capture System epic
+  - Replaces draft "context-handover-and-cleanup" epic
+  - Progressive design: research → design → implement
+  - Blocked by E001 completion
+  - 3 initial tasks: Research (T001), Design (T002), Document E001 Patterns (T003)
+- **E001-T007 Rescoped**: Renamed from "Document Meta-Learnings" to "Document Checkpoint Patterns"
+  - Template-specific patterns only (WHAT/WHY/HOW, context engineering, checkpoint workflow)
+  - Universal patterns moved to E002-T003
+- **E001-T002 Complete**: Check Context Command done (9/9 subtasks, 17/17 requirements)
+  - S9 discovered critical flaw: incomplete state machine (generation vs consumption)
+  - Created `/work:complete-handoff` command to fix lifecycle

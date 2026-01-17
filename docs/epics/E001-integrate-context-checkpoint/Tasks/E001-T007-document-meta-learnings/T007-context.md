@@ -3,7 +3,7 @@
 ## Meta
 ```yaml
 id: E001-T007
-name: document-meta-learnings
+name: document-checkpoint-patterns
 epic: E001
 status: ready  # draft|ready|in-progress|blocked|review|done|archived
 created: 2026-01-17
@@ -13,17 +13,17 @@ external_id: ""
 ```
 
 ## Objective
-Document the meta-learnings and universal patterns discovered during E001 implementation for reuse across ALL Claude Code projects.
+Document the checkpoint/handoff system patterns and implementation details for template users. Focus on template-specific patterns (WHAT/WHY/HOW template, context engineering, dynamic step count).
 
 ## Requirements
-- [ ] Create `.claude/rules/planning.md` in template (critical planning rules)
-- [ ] Create `agent_docs/patterns/knowledge-preservation.md` (WHAT/WHY/HOW template)
-- [ ] Create `agent_docs/patterns/state-machines.md` (state machine pattern)
-- [ ] Create `agent_docs/methodologies/critical-planning.md` (8-Flaw Analysis)
-- [ ] Reference template patterns from meta-project (symlink or pointer)
-- [ ] Add real examples from E001-T002 (handoff template, critical analysis)
-- [ ] Document research sources (context engineering, tacit knowledge)
-- [ ] Verify patterns are universal (not template-specific)
+- [ ] Create `agent_docs/patterns/knowledge-preservation.md` (WHAT/WHY/HOW template for handoffs)
+- [ ] Document context engineering approach (70% threshold, token management)
+- [ ] Document dynamic step count logic (2-10 based on requirements)
+- [ ] Document handoff state machine (specific to checkpoint feature)
+- [ ] Add examples from E001-T002 implementation
+- [ ] Document checkpoint workflow for users
+- [ ] Update template README with checkpoint feature documentation
+- [ ] Reference research sources (context engineering papers)
 
 ## Relevant Files
 - `C:\Users\pc\.claude\plans\soft-kindling-forest.md` - Implementation plan with all design decisions
@@ -34,12 +34,12 @@ Document the meta-learnings and universal patterns discovered during E001 implem
 ## Subtasks
 | ID | Name | Status |
 |----|------|--------|
-| S1 | Create planning.md rules | pending |
-| S2 | Document knowledge-preservation pattern | pending |
-| S3 | Document state-machines pattern | pending |
-| S4 | Document critical-planning methodology | pending |
-| S5 | Add examples from E001 | pending |
-| S6 | Reference from meta-project | pending |
+| S1 | Document WHAT/WHY/HOW template | pending |
+| S2 | Document context engineering approach | pending |
+| S3 | Document dynamic step count logic | pending |
+| S4 | Document checkpoint workflow | pending |
+| S5 | Update template README | pending |
+| S6 | Add usage examples | pending |
 
 ## Approach
 
@@ -131,12 +131,12 @@ This meta-project uses the template's planning rules as source of truth.
 Or use symlink if file system supports.
 
 ## Definition of Done
-- [ ] All 4 documentation files created in template
-- [ ] Meta-project references template (not duplicates)
-- [ ] Examples from E001 included
+- [ ] knowledge-preservation.md created with WHAT/WHY/HOW template
+- [ ] Template README updated with checkpoint feature docs
+- [ ] Usage examples from E001-T002 included
 - [ ] Research sources cited
-- [ ] Patterns are universal (not template-specific)
-- [ ] Documentation is concise and actionable
+- [ ] Documentation is clear for template users
+- [ ] Checkpoint workflow documented end-to-end
 
 ## Dependencies
 - **Blocked by**: E001-T002 (needs to be complete to extract examples)
@@ -169,54 +169,28 @@ pr_number: ""
 - **Next Step**: Wait for E001-T002 user approval, then extract examples and implement documentation
 - **Blocker**: E001-T002 must be approved first (source of examples)
 
-### Session 2026-01-17 (Critical Meta-Learning Added)
+### Session 2026-01-17 (Task Rescoped - Universal Patterns Moved to E002)
+- **TASK RESCOPED**: Renamed from "Document Meta-Learnings" to "Document Checkpoint Patterns"
+- **Rationale**: Separated template-specific patterns from universal meta-learning patterns
+- **Decision**: Universal patterns (state machines, critical planning) → E002 Meta-Learning Epic
+- **This task (T007)**: Focus on checkpoint/handoff system documentation for template users
+- **Historical Note**: S9 "Incomplete State Machine" discovery preserved in Progress Log below
+  - This universal pattern will be formally documented in E002-T003
+  - Kept in T007 history for traceability of where it was discovered
+- **Requirements updated**: Focus on WHAT/WHY/HOW template, context engineering, checkpoint workflow
+- **Subtasks updated**: Rescoped to template-specific documentation
+- **Blocker removed**: Can implement after T003-T006 (doesn't need to wait for E002)
+
+### Session 2026-01-17 (S9 Discovery - Historical Record)
+**NOTE**: This learning moved to E002-T003 scope. Preserved here for historical context.
+
 - **🔥 CRITICAL META-LEARNING DISCOVERED: Incomplete State Machine Flaw**
 - **Discovery Context**: User resumed E001-T002 to mark it done, noticed handoff still `status: open`
 - **The Flaw**: Designed state machine for handoff lifecycle BUT forgot to implement completion
-  - ✅ Created `generate-handoff` command (creates handoff with status: open)
-  - ❌ NO command to mark handoff as completed
-  - ❌ NO command to archive completed handoffs
-  - ❌ State machine transitions documented but NOT IMPLEMENTED
-  - Result: Handoffs stuck at `status: open` forever, workspace pollution
-- **Root Cause Analysis**:
-  - Focused on GENERATION (creating handoffs)
-  - Completely missed CONSUMPTION (completing them)
-  - Documented state machine but didn't verify all transitions had commands
-  - No end-to-end workflow verification
-- **The Fix**:
-  - Added Subtask S9 to E001-T002: "Handoff completion workflow"
-  - Created `/work:complete-handoff` command (265 lines)
-  - Implemented full state machine: open → completed → archived
-  - Verified end-to-end by completing the actual handoff we created
-  - Archive folder structure: `Handoff/Archive/handoff-{timestamp}.md`
-- **Universal Pattern to Document**:
-  ```
-  INCOMPLETE STATE MACHINE DETECTION
-
-  When designing state machines, verify:
-  1. Every state has a command to ENTER it
-  2. Every state has a command to EXIT it
-  3. Terminal states have archive/cleanup logic
-  4. Workflow is tested END-TO-END (not just creation)
-
-  Common failure mode:
-  - Design generation/creation path ✓
-  - Forget completion/cleanup path ✗
-  - State machine diagram looks complete
-  - Implementation is incomplete
-
-  Detection checklist:
-  [ ] Can I create the entity?
-  [ ] Can I update the entity?
-  [ ] Can I complete the entity?
-  [ ] Can I archive the entity?
-  [ ] Does each state have enter/exit commands?
-  [ ] Did I test the FULL lifecycle?
-  ```
-- **Impact**: This learning must be added to `state-machines.md` documentation
-- **Current State**: Critical learning documented for T007 implementation
-- **Next Step**: Implement T007 documentation with this example
-- **Blocker**: None (E001-T002 now complete with S9 finished)
+- **The Fix**: Created `/work:complete-handoff` command (265 lines), completed full lifecycle
+- **Universal Pattern**: Generation vs Consumption - common failure mode in state machine design
+- **Impact**: This universal pattern will be documented in E002-T003 (Meta-Learning Epic)
+- **See**: E002-T003 for formal documentation of this pattern
 
 ## Assumptions
 - Patterns discovered in E001-T002 are truly universal
