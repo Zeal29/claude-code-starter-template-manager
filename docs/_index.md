@@ -20,8 +20,8 @@
 ---
 
 ## Quick Resume
-**Last worked on**: E001-T002 - check-context-command (100% complete, in review)
-**Command**: `/work:resume E001-T002` to review and approve
+**Last worked on**: E001-T007 - document-meta-learnings (task created)
+**Command**: `/work:resume E001-T007` or `/work:resume E001-T002` (in review)
 
 ---
 
