@@ -85,6 +85,53 @@ The workAt70Percent R&D project provides:
 
 ---
 
+## Template Development Workflow
+
+**IMPORTANT**: This meta-project exists to develop the template, not replace it.
+
+### Before You Start Any Template Task
+
+- [ ] Identify if this task modifies template files
+- [ ] If YES: Work in `claude-code-starter/` FIRST
+- [ ] If NO: Work in `template-manager/` directly
+
+### Development Process
+
+**Phase 1: Template Development**
+1. Navigate to `claude-code-starter/` directory
+2. Make all changes in template context
+3. Test changes work correctly
+4. Commit to template (if needed)
+
+**Phase 2: Dogfooding (After Template Complete)**
+5. Copy validated changes to `template-manager/`
+6. Test in meta-project context
+7. Identify UX issues
+8. Feed learnings back to template
+
+**Phase 3: Finalization**
+9. Final validation in both contexts
+10. Template ready for release
+
+### Folder Structure Rules
+
+**Both projects must mirror each other**:
+- `agent_docs/` at project root (NOT `.claude/agent_docs/`)
+- `docs/_templates/` (template files)
+- `.claude/commands/work/` (work commands)
+- `.claude/rules/` (project rules)
+
+**Why**: Template-manager dogfoods the template. If structures differ, testing is invalid.
+
+### Red Flags
+
+🚩 Creating files in `template-manager/` before they exist in `claude-code-starter/`
+🚩 Different folder structures between projects
+🚩 Forgetting to test in template before copying
+🚩 Making breaking changes without validation
+
+---
+
 ## Active Work
 
 - **Current Epic:** E001 - Integrate Context Checkpoint System
