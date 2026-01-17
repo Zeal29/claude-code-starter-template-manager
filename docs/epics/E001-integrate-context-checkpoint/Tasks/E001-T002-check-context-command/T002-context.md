@@ -7,7 +7,7 @@ name: check-context-command
 epic: E001
 status: review  # draft|ready|in-progress|blocked|review|done|archived
 created: 2026-01-17
-updated: 2026-01-17T12:00:00
+updated: 2026-01-17
 owner: User
 external_id: ""
 ```
@@ -72,8 +72,10 @@ Create the `/work:check-context` command that checks context usage and auto-gene
 
 ## Git Tracking
 ```yaml
-branch: ""
-commits: []
+branch: "master"
+commits:
+  - 90e3c90  # feat: mark E001-T002 as complete and ready for review
+  - 51fa058  # checkpoint: handoff created at 17% context
 pr_number: ""
 ```
 
@@ -142,4 +144,4 @@ pr_number: ""
 ## Time Log
 | Date | Duration | Notes |
 |------|----------|-------|
-| 2026-01-17 | ~2h | Planning + implementation: Plan mode, critical analysis, 2 command files created (11/14 requirements complete) |
+| 2026-01-17 | ~3.5h | Planning + implementation + testing: Created 2 commands, tested via self-application, 100% complete |
