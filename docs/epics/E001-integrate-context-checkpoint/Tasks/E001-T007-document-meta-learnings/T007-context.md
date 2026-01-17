@@ -169,6 +169,55 @@ pr_number: ""
 - **Next Step**: Wait for E001-T002 user approval, then extract examples and implement documentation
 - **Blocker**: E001-T002 must be approved first (source of examples)
 
+### Session 2026-01-17 (Critical Meta-Learning Added)
+- **🔥 CRITICAL META-LEARNING DISCOVERED: Incomplete State Machine Flaw**
+- **Discovery Context**: User resumed E001-T002 to mark it done, noticed handoff still `status: open`
+- **The Flaw**: Designed state machine for handoff lifecycle BUT forgot to implement completion
+  - ✅ Created `generate-handoff` command (creates handoff with status: open)
+  - ❌ NO command to mark handoff as completed
+  - ❌ NO command to archive completed handoffs
+  - ❌ State machine transitions documented but NOT IMPLEMENTED
+  - Result: Handoffs stuck at `status: open` forever, workspace pollution
+- **Root Cause Analysis**:
+  - Focused on GENERATION (creating handoffs)
+  - Completely missed CONSUMPTION (completing them)
+  - Documented state machine but didn't verify all transitions had commands
+  - No end-to-end workflow verification
+- **The Fix**:
+  - Added Subtask S9 to E001-T002: "Handoff completion workflow"
+  - Created `/work:complete-handoff` command (265 lines)
+  - Implemented full state machine: open → completed → archived
+  - Verified end-to-end by completing the actual handoff we created
+  - Archive folder structure: `Handoff/Archive/handoff-{timestamp}.md`
+- **Universal Pattern to Document**:
+  ```
+  INCOMPLETE STATE MACHINE DETECTION
+
+  When designing state machines, verify:
+  1. Every state has a command to ENTER it
+  2. Every state has a command to EXIT it
+  3. Terminal states have archive/cleanup logic
+  4. Workflow is tested END-TO-END (not just creation)
+
+  Common failure mode:
+  - Design generation/creation path ✓
+  - Forget completion/cleanup path ✗
+  - State machine diagram looks complete
+  - Implementation is incomplete
+
+  Detection checklist:
+  [ ] Can I create the entity?
+  [ ] Can I update the entity?
+  [ ] Can I complete the entity?
+  [ ] Can I archive the entity?
+  [ ] Does each state have enter/exit commands?
+  [ ] Did I test the FULL lifecycle?
+  ```
+- **Impact**: This learning must be added to `state-machines.md` documentation
+- **Current State**: Critical learning documented for T007 implementation
+- **Next Step**: Implement T007 documentation with this example
+- **Blocker**: None (E001-T002 now complete with S9 finished)
+
 ## Assumptions
 - Patterns discovered in E001-T002 are truly universal
 - Template is appropriate place for universal patterns (vs separate repo)

@@ -5,7 +5,7 @@
 id: E001-T002
 name: check-context-command
 epic: E001
-status: review  # draft|ready|in-progress|blocked|review|done|archived
+status: done  # draft|ready|in-progress|blocked|review|done|archived
 created: 2026-01-17
 updated: 2026-01-17
 owner: User
@@ -30,6 +30,9 @@ Create the `/work:check-context` command that checks context usage and auto-gene
 - [x] Test all 15 unit tests (10 core scenarios verified)
 - [x] Run end-to-end integration test (handoff generation complete)
 - [x] Verify with real E001-T002 work (used E001-T002 for testing)
+- [x] Create `/work:complete-handoff` command (S9)
+- [x] Update handoff state machine (open → completed → archived)
+- [x] Verify handoff completion workflow end-to-end
 
 ## Relevant Files
 - `docs/epics/E001-integrate-context-checkpoint/Research/workAt70Percent/check-context.md` - source to adapt
@@ -39,14 +42,15 @@ Create the `/work:check-context` command that checks context usage and auto-gene
 ## Subtasks
 | ID | Name | Status |
 |----|------|--------|
-| S1 | Core command structure | pending |
-| S2 | Active work item detection | pending |
-| S3 | Context percentage parsing | pending |
-| S4 | Next steps generation | pending |
-| S5 | Context file update | pending |
-| S6 | Handoff file creation | pending |
-| S7 | Git integration | pending |
-| S8 | User approval flow | pending |
+| S1 | Core command structure | done |
+| S2 | Active work item detection | done |
+| S3 | Context percentage parsing | done |
+| S4 | Next steps generation | done |
+| S5 | Context file update | done |
+| S6 | Handoff file creation | done |
+| S7 | Git integration | done |
+| S8 | User approval flow | done |
+| S9 | Handoff completion workflow | done |
 
 ## Approach
 1. Adapt R&D check-context.md for template
@@ -59,12 +63,12 @@ Create the `/work:check-context` command that checks context usage and auto-gene
 6. Use `/git:commit` format for commit message
 
 ## Definition of Done
-- [ ] `/work:check-context` command works
-- [ ] Detects context percentage correctly
-- [ ] Generates contextual next steps
-- [ ] Updates active context file
-- [ ] Creates handoff file
-- [ ] Git commits checkpoint
+- [x] `/work:check-context` command works
+- [x] Detects context percentage correctly
+- [x] Generates contextual next steps
+- [x] Updates active context file
+- [x] Creates handoff file
+- [x] Git commits checkpoint
 
 ## Dependencies
 - **Blocked by**: None (can run parallel with T001)
@@ -123,14 +127,34 @@ pr_number: ""
 - **Next Step**: Complete remaining tests (edit, reject, auto-approve, e2e)
 - **Blocker**: None
 
-### Session 2026-01-17 (Completion)
+### Session 2026-01-17 (Completion & Handoff Discovery)
 - Verified all requirements (14/14 complete - 100%)
 - Committed handoff checkpoint to git
 - Updated task status to "review"
 - Commands ready for integration into template
 - Dogfooding verification complete (used E001-T002 as test subject)
-- **Current State**: Task complete, ready for review
-- **Next Step**: User review and approval, then mark as "done"
+- **User reviewed and approved implementation**
+- **CRITICAL FLAW DISCOVERED**: Handoff state machine incomplete
+  - Created handoff but no way to close it
+  - Missing `/work:complete-handoff` command
+  - Handoff stuck at status: open forever
+- **Added Subtask S9**: Handoff completion workflow
+- **Added 3 new requirements**: complete-handoff command, state machine, verification
+- Created `/work:complete-handoff` command (265 lines)
+- **Current State**: S9 in-progress (8/9 subtasks done)
+- **Next Step**: Complete S9, verify end-to-end, mark T002 done
+- **Blocker**: None
+
+### Session 2026-01-17 (Handoff Completed)
+- **[HANDOFF COMPLETE]**
+  - Completed 3/3 steps from handoff-20260117-120000
+  - Archive: `Handoff/Archive/handoff-20260117-153000.md`
+  - Work completed:
+    - Step 1: Approval flow testing (all 3 options verified)
+    - Step 2: --auto-approve flag validation
+    - Step 3: End-to-end integration test at 70%+ context
+- **Current State**: Handoff workflow verified working
+- **Next Step**: Update requirements, mark S9 complete, then mark T002 done
 - **Blocker**: None
 
 ## Assumptions

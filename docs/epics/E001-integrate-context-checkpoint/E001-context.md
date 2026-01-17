@@ -29,7 +29,7 @@ Integrate the workAt70Percent context checkpoint automation system into the clau
 | ID | Name | Status | Progress | External ID |
 |----|------|--------|----------|-------------|
 | T001 | Infrastructure Hook Setup | done | 100% | - |
-| T002 | Check Context Command | review | 100% | - |
+| T002 | Check Context Command | done | 100% | - |
 | T003 | Integration with Work Commands | ready | 0% | - |
 | T004 | Template Updates | ready | 0% | - |
 | T005 | Documentation | ready | 0% | - |
@@ -60,10 +60,10 @@ related_branches: []
 ```
 
 ## Current Focus
-**Active Task**: E001-T002 (Check Context Command)
+**Active Task**: E001-T003 (Integration with Work Commands)
 **Blocker**: None
-**Completed**: T001 - Infrastructure hook setup complete with tests passed
-**Next Session**: Start T002 - create /check-context command implementation
+**Completed**: T001, T002 complete - hook infrastructure and check-context command ready
+**Next Session**: Start T003 - integrate commands with existing /work:* suite
 
 ## Quick Links
 - Research: `Research/` (will contain analysis of workAt70Percent)
