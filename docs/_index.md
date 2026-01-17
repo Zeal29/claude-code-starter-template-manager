@@ -15,20 +15,20 @@
 ## Active Standalone Tasks
 | ID | Name | Status | External ID |
 |----|------|--------|-------------|
-| — | No active tasks yet | — | — |
+| T001 | fix-task-and-subtask-behaviour | 📝 draft | — |
 
 ---
 
 ## Quick Resume
-**Last worked on**: E002 - meta-learning-system (epic created, blocked by E001)
-**Command**: `/work:resume E001` (continue with T003)
+**Last worked on**: E001-T003 - integration-with-work-commands
+**Command**: `/work:resume E001-T003`
 
 ---
 
 ## ID Counters
 ```yaml
 next_epic: E003
-next_standalone_task: T001
+next_standalone_task: T002
 ```
 
 ---
