@@ -21,7 +21,7 @@
 
 ## Quick Resume
 **Last worked on**: E001-T003 - integration-with-work-commands
-**Command**: `/work:resume E001` or `/work:resume T003`
+**Command**: `/work:resume E001-T003`
 
 ---
 

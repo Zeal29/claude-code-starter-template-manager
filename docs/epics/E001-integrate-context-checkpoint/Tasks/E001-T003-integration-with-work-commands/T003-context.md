@@ -60,7 +60,7 @@ Integrate checkpoint awareness into existing work commands AND implement progres
 | ID  | Name                                                    | Status  |
 | --- | ------------------------------------------------------- | ------- |
 | S1  | T003a: Implement checkpoint awareness in commands       | done    |
-| S2  | T003a: Test checkpoint awareness (15 tests)             | pending |
+| S2  | T003a: Test checkpoint awareness (15 tests)             | done    |
 | S3  | T003a: Commit checkpoint awareness changes              | pending |
 | S4  | T003b: Create new templates (progress-index, daily-log) | pending |
 | S5  | T003b: Implement migration logic                        | pending |
@@ -112,6 +112,40 @@ pr_number: ""
 
 ## Progress Log
 
+### Session 2026-01-18 Part 2 (Issue Resolution)
+
+- ✅ **S2a Complete**: Resolved 2 low-priority issues found during testing (15/15 tests now PASS)
+- **Issue 1 - Malformed Handoff Handling**: Added explicit error handling to all 3 commands
+  - Specific error messages for: YAML parse fail, missing fields, invalid types
+  - Commands: save.md (+6 lines), resume.md (+7 lines), status.md (+7 lines)
+  - Test fixtures: Added handoff-missing-fields.md, handoff-invalid-types.md
+- **Issue 2 - Variable Naming**: Standardized on `{{IF_ACTIVE_HANDOFF}}` across all commands
+  - Replaced `{{IF_HANDOFF_EXISTS && STATUS != "completed"}}` with `{{IF_ACTIVE_HANDOFF}}`
+  - Added HTML comments documenting variable semantics
+  - Changes: save.md (2 instances), resume.md (1 comment), status.md (1 comment)
+- **Files Modified**: 6 files (~48 lines total)
+- **Test Results**: 15/15 PASS (improved from 13/15)
+- **Current State**: All T003a work complete and validated
+- **Next Step**: S3 - Commit T003a changes (checkpoint awareness + issue fixes)
+- **Blocker**: None
+
+### Session 2026-01-18 Part 1 (Testing)
+
+- ✅ **S2 Complete**: Tested checkpoint awareness across all three commands (15 tests)
+- **Test Results**: 13/15 PASS, 2/15 PARTIAL (malformed handoff edge case)
+- **Test Method**: Manual instruction verification (commands are instruction files, not executable code)
+- **Test Coverage**:
+  - /work:save: 5 tests (no handoff, open, in-progress, completed, malformed)
+  - /work:resume: 5 tests (same scenarios + edge case: 1 incomplete step)
+  - /work:status: 5 tests (project/epic/task views with 0-2 checkpoints)
+- **Test Fixtures Created**: 4 handoff files in TestFixtures/ directory
+- **Issues Found**: 2 low-priority documentation issues (malformed handling, variable naming)
+- **Blockers**: None
+- **Test Documentation**: [test-execution.md](test-execution.md) (full report, 13/15 pass)
+- **Conclusion**: S1 implementation ready for commit (no code changes needed)
+- **Current State**: T003a complete (S1+S2 done), ready to commit or move to T003b
+- **Next Step**: S3 - Commit checkpoint awareness changes
+
 ### Session 2026-01-17 (Implementation)
 
 - ✅ **S1 Complete**: Implemented checkpoint awareness in all three commands
@@ -131,6 +165,10 @@ pr_number: ""
 
 - Checkpoint entries in Progress Log have consistent format
 - Existing commands are additive-only changes
+- ~~**Malformed handoff handling** (added 2026-01-18)~~ → **RESOLVED 2026-01-18 Part 2**
+  - Now explicit in command instructions (save.md, resume.md, status.md)
+  - Three error scenarios with specific warning messages
+  - See test-execution.md for details
 
 ## Unanswered Questions
 
