@@ -13,14 +13,32 @@ owner: User
 external_id: ""
 ```
 
+## Task Organization
+
+This task is logically split into two phases tracked within a single folder:
+
+**Phase A (T003a): Checkpoint Awareness** ✅ COMPLETE
+- Subtasks S1-S4: Update save/resume/status commands with checkpoint awareness
+- Status: done (100%)
+- Commits: 626b578, 81f946c
+- Testing: 15/15 tests PASS (after 2 issue fixes)
+- Duration: 2026-01-17 to 2026-01-18
+
+**Phase B (T003b): Progressive Disclosure** 🟡 PENDING
+- Subtasks S5-S9: Implement daily progress logs and archive command
+- Status: pending (0%)
+- Commits: (none yet)
+- Dependencies: None (T003a complete)
+- Start: TBD
+
 ## Objective
 
 Integrate checkpoint awareness into existing work commands AND implement progressive disclosure for Progress Logs.
 
-**Decision**: Split into two subtasks for better risk management:
+**Decision**: Split into two phases for better risk management:
 
-- **T003a**: Checkpoint Awareness (quick win, low risk)
-- **T003b**: Progressive Disclosure Refactor (structural change, medium risk)
+- **T003a**: Checkpoint Awareness (quick win, low risk) → ✅ DONE
+- **T003b**: Progressive Disclosure Refactor (structural change, medium risk) → 🟡 PENDING
 
 ## Requirements
 
