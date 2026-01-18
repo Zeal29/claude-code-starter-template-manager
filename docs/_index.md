@@ -9,7 +9,7 @@
 ## Active Epics
 | ID | Name | Status | Progress | Active Task | External ID |
 |----|------|--------|----------|-------------|-------------|
-| E001 | integrate-context-checkpoint | 🟡 in-progress | 29% | T003 | — |
+| E001 | integrate-context-checkpoint | 🟡 in-progress | 35% | T003 | — |
 | E002 | meta-learning-system | 🔴 blocked | 0% | None (blocked by E001) | — |
 
 ## Active Standalone Tasks

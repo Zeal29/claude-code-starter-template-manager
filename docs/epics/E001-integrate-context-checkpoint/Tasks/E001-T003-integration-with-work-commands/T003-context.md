@@ -8,7 +8,7 @@ name: integration-with-work-commands
 epic: E001
 status: in-progress # draft|ready|in-progress|blocked|review|done|archived
 created: 2026-01-17
-updated: 2026-01-17
+updated: 2026-01-18
 owner: User
 external_id: ""
 ```
@@ -105,8 +105,10 @@ Integrate checkpoint awareness into existing work commands AND implement progres
 ## Git Tracking
 
 ```yaml
-branch: ""
-commits: []
+branch: "master"
+commits:
+  - 626b578  # feat(T003): document checkpoint awareness implementation and testing
+  - 81f946c  # docs(T003): mark S3 complete - commit checkpoint awareness docs
 pr_number: ""
 ```
 
@@ -193,6 +195,7 @@ pr_number: ""
 
 ## Time Log
 
-| Date       | Duration | Notes        |
-| ---------- | -------- | ------------ |
-| 2026-01-17 | -        | Task created |
+| Date       | Duration | Notes                              |
+| ---------- | -------- | ---------------------------------- |
+| 2026-01-17 | -        | Task created, S1 implementation    |
+| 2026-01-18 | -        | S2 testing, S2a fixes, S3 commit   |
