@@ -61,7 +61,7 @@ Integrate checkpoint awareness into existing work commands AND implement progres
 | --- | ------------------------------------------------------- | ------- |
 | S1  | T003a: Implement checkpoint awareness in commands       | done    |
 | S2  | T003a: Test checkpoint awareness (15 tests)             | done    |
-| S3  | T003a: Commit checkpoint awareness changes              | pending |
+| S3  | T003a: Commit checkpoint awareness changes              | done    |
 | S4  | T003b: Create new templates (progress-index, daily-log) | pending |
 | S5  | T003b: Implement migration logic                        | pending |
 | S6  | T003b: Update commands for daily logs                   | pending |
@@ -111,6 +111,23 @@ pr_number: ""
 ```
 
 ## Progress Log
+
+### Session 2026-01-18 Part 3 (S3 - Commit)
+
+- ✅ **S3 Complete**: Committed T003a documentation and testing to meta-project repo
+- **Discovery**: Template files (claude-code-starter/) are gitignored as separate subproject
+  - Template implementation exists and is complete (save.md, resume.md, status.md)
+  - Meta-project tracks documentation of template work, not template itself
+  - This is intentional: template managed separately from meta-project
+- **Commit**: feat(T003): document checkpoint awareness implementation and testing (626b578)
+  - 10 files: 929 insertions, 2 deletions
+  - Included: T003-context.md updates, 6 test fixtures, test-execution.md, test-results.md
+  - Documented S1-S2 completion: implementation + testing
+- **Artifacts Cleaned**: Removed Windows `nul` file before committing
+- **Current State**: T003a (checkpoint awareness) 100% complete and committed
+- **Progress**: 4/9 subtasks done (44% complete)
+- **Next Step**: S4 - Start T003b (Progressive Disclosure) OR take a break
+- **Blocker**: None
 
 ### Session 2026-01-18 Part 2 (Issue Resolution)
 
